@@ -326,9 +326,11 @@ async def get_fires(
         regex="^(grid|detail|both)$"
     ),
 
-    mode: str = Query(
-        default="both",
-        regex="^(grid|detail|both)$"
+    limit: int = Query(
+        default=5000,
+        ge=1,
+        le=10000,
+        description="Maximum number of fire records to return"
     ),
 
 ):

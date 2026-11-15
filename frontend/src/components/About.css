@@ -1,0 +1,12 @@
+/* About component styles */
+.about {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+.about h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}

@@ -8,11 +8,12 @@ import HistoricalChart from './components/HistoricalChart';
 import RegionalOverview from './components/RegionalOverview';
 import FireMap from './components/FireMap';
 import Timeline from './components/Timeline';
-import WeatherPanel from './components/WeatherPanel';
-import ExportButtons from './components/ExportButtons';
+
 import { fetchFires } from './services/api';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
+import WeatherPanel from './components/WeatherPanel';
+import ExportButtons from './components/ExportButtons';
 
 function App() {
   // Page navigation state: 'landing' | 'dashboard' | 'about'
@@ -146,6 +147,17 @@ function App() {
         onAggregationChange={handleAggregationChange}
         showFires={showFires}
         onToggleFires={handleToggleFires}
+        confidenceFilter={confidenceFilter}
+        onConfidenceFilterChange={setConfidenceFilter}
+        frpFilter={frpFilter}
+        onFrpFilterChange={setFrpFilter}
+        layerMode={layerMode}
+        onLayerModeChange={setLayerMode}
+        onResetFilters={() => {
+          setConfidenceFilter(0);
+          setFrpFilter(0);
+          setLayerMode('Markers');
+        }}
       />
 
       <div className="workspace">
